@@ -19,10 +19,10 @@ The following table breaks down the major differences.
 
 ### Predict
 1. What will happen if you connect an active buzzer to a digital output set to HIGH?
-    > your answer
+    > the active buzzer will do the beep
 
 2. What do you predict will happen if you use the same program with a passive buzzer?
-    > your answer
+    > nothing will happen because that isn't the code that the passive buzzer needs
 
 
 ## 2. Build the circuit
@@ -77,15 +77,26 @@ Change the program to create each of the following patterns after the LCD update
 
 ### Reflect
 1. Which part of the code controls how long the buzzer sounds?
-    > your answer
+    > the delay 
 
 2. What code would you use to create three short beeps?
     ```c++
+    digitalWrite(buzzerPin, HIGH);
+    delay(200);
+    digitalWrite(buzzerPin, LOW);
+    delay(200);
+    digitalWrite(buzzerPin, HIGH);
+    delay(200);
+    digitalWrite(buzzerPin, LOW);
+    delay(200);
+    digitalWrite(buzzerPin, HIGH);
+    delay(200);
+    digitalWrite(buzzerPin, LOW);
 
     ```
 
 3. Can you change the pitch of the active buzzer using `digitalWrite()`?
-    > your answer
+    > no
 
 ## 4. Try the passive buzzer
 Disconnect the power and replace the active buzzer with the passive buzzer. Keep the same pin connections.
@@ -107,18 +118,18 @@ Change the frequency argument and observe what happens. Record your observations
 
 | Frequency | Observation |
 |  ---      |  ---        |
-| 250 Hz    |             |
-| 500 Hz    |             |
-| 1000 Hz    |             |
-| 2000 Hz    |             |
-| 5000 Hz    |             |
+| 250 Hz    |       low pitch      |
+| 500 Hz    |       higher pitch      |
+| 1000 Hz    |        higher pitch     |
+| 2000 Hz    |      higher pitch       |
+| 5000 Hz    |      highest pitch       |
 
 ### Reflect
 1. How are frequency and pitch related? As frequency increases, pitch _____.
-    > your answer
+    > increases
 
 2. Why would a designer choose a passive buzzer for an alarm system?
-    > your answer
+    > because it can change the pitch of the sound and be customized
 
 
 # 5. Set an alert
@@ -134,11 +145,11 @@ void tooHotAlert() {
 
 # 6. Wrap up
 1. What is the major difference between active and passive buzzers?
-    > your answer
+    > active cant be customized and is stuck at a certain tone and the passive can be customized and can change tone
 
 2. What is an advantage of a passive buzzer when creating an alert system?
-    > your answer
+    > it can change tones 
 
 3. Why is it useful to separate code that reads sensors from the code that controls output devices?
-    > your answers
+    > because sensors send the info to the output devices
 
